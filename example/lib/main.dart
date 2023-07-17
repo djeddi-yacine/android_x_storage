@@ -206,7 +206,7 @@ class _MyAppState extends State<MyApp> {
     String podcasts;
     try {
       podcasts =
-          await _androidXStoragePlugin.getDownloadsDirectory() ?? "no podcasts";
+          await _androidXStoragePlugin.getPodcastsDirectory() ?? "no podcasts";
     } on PlatformException {
       podcasts = "error";
     }
