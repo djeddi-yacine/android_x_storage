@@ -11,9 +11,9 @@ topics:
   - storage
 
 screenshots:
-  - description: Example 01.
+  - description: Android Phone.
     path: screenshots/screenshot_01.png
-  - description: Example 02.
+  - description: Android TV.
     path: screenshots/screenshot_02.png
 
 environment:
