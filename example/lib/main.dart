@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
   String _movies = "empty";
   String _podcasts = "empty";
   String _sdcard = "empty";
-  List<String> _usb = [];
+  List<String?> _usb = [];
   @override
   void initState() {
     super.initState();
@@ -231,9 +231,9 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> usb() async {
-    List<String> usb;
+    List<String?> usb;
     try {
-      usb = await _androidXStoragePlugin.getUSBStorageDirectories() ?? [];
+      usb = await _androidXStoragePlugin.getUSBStorageDirectories();
     } on PlatformException {
       usb = ["error"];
     }
@@ -267,26 +267,29 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Center(
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Running on SDK : ${_platform.toString()}\n'),
-                Text('USB Paths : $_usb\n'),
-                Text('External Storage Path : $_x\n'),
-                Text('Download Path : $_download\n'),
-                Text('Documents Path : $_documents\n'),
-                Text('DCIM Path : $_dcim\n'),
-                Text('Pictures Path : $_pictures\n'),
-                Text('Podcasts Path : $_podcasts\n'),
-                Text('Music Path : $_music\n'),
-                Text('Movies Path : $_movies\n'),
-                Text('Notifications Path : $_notifications\n'),
-                Text('Alarms Path : $_alarms\n'),
-                Text('Ringtones Path : $_ringtones\n'),
-                Text('SDCard Path : $_sdcard\n'),
-              ],
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Running on SDK : ${_platform.toString()}\n'),
+                  Text('USB Paths : $_usb\n'),
+                  Text('External Storage Path : $_x\n'),
+                  Text('Download Path : $_download\n'),
+                  Text('Documents Path : $_documents\n'),
+                  Text('DCIM Path : $_dcim\n'),
+                  Text('Pictures Path : $_pictures\n'),
+                  Text('Podcasts Path : $_podcasts\n'),
+                  Text('Music Path : $_music\n'),
+                  Text('Movies Path : $_movies\n'),
+                  Text('Notifications Path : $_notifications\n'),
+                  Text('Alarms Path : $_alarms\n'),
+                  Text('Ringtones Path : $_ringtones\n'),
+                  Text('SDCard Path : $_sdcard\n'),
+                ],
+              ),
             ),
           ),
         ),
