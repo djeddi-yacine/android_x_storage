@@ -36,7 +36,7 @@ _androidXStorage.getRingtonesDirectory();
 _androidXStorage.getNotificationsDirectory();
 _androidXStorage.getMusicDirectory();
 _androidXStorage.getMoviesDirectory();
-_androidXStorage.getPodcastsDirectory
+_androidXStorage.getPodcastsDirectory();
 ```
 
 To get List of path to USBs
@@ -47,7 +47,7 @@ To get the SDCard path
 ```dart
 _androidXStorage.getSDCardStorageDirectory();
 ```
-> Bonus: `_androidXStorage.getPlatformVersion()` return the SDK number to request permissions.
+> Bonus: ``_androidXStorage.getPlatformVersion()`` return the SDK number to request permissions.
 
 see The Example App.
 ## LICENSE
