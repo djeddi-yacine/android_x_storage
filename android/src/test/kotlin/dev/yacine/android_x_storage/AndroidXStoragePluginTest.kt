@@ -22,6 +22,6 @@ internal class AndroidXStoragePluginTest {
     val mockResult: MethodChannel.Result = Mockito.mock(MethodChannel.Result::class.java)
     plugin.onMethodCall(call, mockResult)
 
-    Mockito.verify(mockResult).success("Android " + android.os.Build.VERSION.RELEASE)
+    Mockito.verify(mockResult).success(android.os.Build.VERSION.SDK_INT)
   }
 }
