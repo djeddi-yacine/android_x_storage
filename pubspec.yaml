@@ -1,6 +1,6 @@
 name: android_x_storage
 description: A new Flutter plugin for Android to get the external storage directories.
-version: 0.0.1
+version: 1.0.0
 homepage:
 
 environment:
