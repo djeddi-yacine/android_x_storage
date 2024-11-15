@@ -1,5 +1,5 @@
 group 'dev.yacine.android_x_storage'
-version '1.0.1'
+version '1.0.2'
 
 buildscript {
     ext.kotlin_version = '1.7.10'
@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.3.0'
+        classpath 'com.android.tools.build:gradle:7.3.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -29,8 +29,6 @@ android {
         namespace 'dev.yacine.android_x_storage'
     }
 
-    compileSdkVersion 34
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -45,6 +43,7 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
+        compileSdk 34
     }
 }

@@ -4,7 +4,7 @@ description: A new Flutter plugin for Android to get the external storage direct
 homepage: https://github.com/djeddi-yacine/android_x_storage
 repository: https://github.com/djeddi-yacine/android_x_storage
 issue_tracker: https://github.com/djeddi-yacine/android_x_storage/issues
-version: 1.0.1
+version: 1.0.2
 
 topics:
   - android

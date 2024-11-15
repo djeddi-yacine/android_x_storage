@@ -5,7 +5,6 @@ import android.hardware.usb.UsbDevice
 import android.hardware.usb.UsbManager
 import android.os.Environment
 
-import androidx.annotation.NonNull
 import androidx.core.content.ContextCompat
 
 import java.io.File
@@ -21,13 +20,13 @@ class AndroidXStoragePlugin : FlutterPlugin, MethodCallHandler {
   private lateinit var channel: MethodChannel
   private lateinit var applicationContext: Context
 
-  override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+  override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     applicationContext = flutterPluginBinding.applicationContext
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "android_x_storage")
     channel.setMethodCallHandler(this)
   }
 
-  override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
+  override fun onMethodCall(call: MethodCall, result: Result) {
     when (call.method) {
       "getPlatformVersion" -> {
         result.success(android.os.Build.VERSION.SDK_INT)
@@ -124,7 +123,7 @@ class AndroidXStoragePlugin : FlutterPlugin, MethodCallHandler {
     return directory.exists() && directory.isDirectory
   }
 
-  override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
+  override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)
   }
 }
